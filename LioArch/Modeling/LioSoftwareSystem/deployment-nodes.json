@@ -1,0 +1,141 @@
+[
+  {
+    "_id": "G1Server",
+    "DisplayName": "Win-x64 G1Server",
+    "Technology": "jre-1.8, dotnet-3.1 runtime, .NET48",
+    "RelationString": "",
+    "Nodes": [
+      {
+        "_id": "IIS@G1Server",
+        "Type": "Aggregate"
+      },
+      {
+        "_id": "ServiceControllerG1",
+        "Type": "Aggregate"
+      }
+    ],
+    "Containers": [
+      {
+        "CanonicalName": "LioMama",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "LioVip",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "LioDB",
+        "LifetimeResp": "Windows Service Controller"
+      },
+      {
+        "CanonicalName": "G1AdapterService",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "DialogApi",
+        "LifetimeResp": "IIS Service"
+      },
+      {
+        "CanonicalName": "LioSet-Backend",
+        "LifetimeResp": "Process"
+      },
+      {
+        "CanonicalName": "DataActivation",
+        "LifetimeResp": "Process"
+      },
+      {
+        "CanonicalName": "LioCheck",
+        "LifetimeResp": "Process"
+      }
+    ]
+  },
+  {
+    "_id": "RadioServer",
+    "DisplayName": "Win-x64 RadioServer",
+    "Technology": "dotnet-3.1 runtime, .NET48",
+    "RelationString": "",
+    "Nodes": [
+      {
+        "_id": "ServiceControllerRadio",
+        "Type": "Aggregate"
+      }
+    ],
+    "Containers": [
+      {
+        "CanonicalName": "LioComInterfaceMain",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "LioCTTLs",
+        "LifetimeResp": "Process | LioWatchdog"
+      }
+    ]
+  },
+  {
+    "_id": "Workstation-1",
+    "DisplayName": "Workstation-1",
+    "Technology": "java-1.8",
+    "RelationString": "",
+    "Nodes": [],
+    "Containers": [
+      {
+        "CanonicalName": "G2Client-1",
+        "LifetimeResp": "Process"
+      },
+      {
+        "CanonicalName": "LSSApp-1",
+        "LifetimeResp": "Process"
+      },
+      {
+        "CanonicalName": "LioSetWeb",
+        "LifetimeResp": "Web browser"
+      },
+      {
+        "CanonicalName": "Acoustic-Wp-1",
+        "LifetimeResp": "OS"
+      }
+    ] 
+  },
+  {
+    "_id": "PIServer",
+    "DisplayName": "PIServer",
+    "Technology": "java-1.8",
+    "RelationString": "",
+    "Nodes": [],
+    "Containers": [
+      {
+        "CanonicalName": "ClientProxy",
+        "LifetimeResp": "SGI Service"
+      },
+      {
+        "CanonicalName": "LioWorkflow",
+        "LifetimeResp": "SGI Service"
+      },
+      {
+        "CanonicalName": "LioIDS",
+        "LifetimeResp": "SGI Service"
+      },
+      {
+        "CanonicalName": "ActiveMQ",
+        "LifetimeResp": "SGI Service"
+      }
+    ]
+  },
+  {
+    "_id": "ParityServer",
+    "DisplayName": "ParityServer",
+    "Technology": "native",
+    "RelationString": "",
+    "Nodes": [],
+    "Containers": [
+      {
+        "CanonicalName": "SoftSwitch",
+        "LifetimeResp": "Process"
+      },
+      {
+        "CanonicalName": "LioGw",
+        "LifetimeResp": "Process"
+      }
+    ]
+  }
+]

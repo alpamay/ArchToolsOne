@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "ActionAccess",
+    "CanonicalName": "ActionAccess",
+    "Description": "API to LioMama",
+    "Technology": "NET-4.8",
+    "Uses": [
+      {
+        "Target": "LioMama",
+        "Action": "ActionAccess"
+      }
+    ]
+  },
+  {
+    "_id": "ActionExecution",
+    "CanonicalName": "ActionExecution",
+    "Description": "G2 actions execution",
+    "Technology":  "NET-4.8", 
+    "Uses": [
+      {
+        "Target": "VoiceService",
+        "Action": "Pass voice commands"
+      }
+    ]
+  },
+  {
+    "_id": "VoiceService",
+    "CanonicalName": "VoiceService",
+    "Description": "Handles voice commands",
+    "Technology": "NET-4.8",
+    "Uses": [
+      {
+        "Target": "RadioAgency",
+        "Action": "Sending G2 voice orders"
+      }
+    ]
+  }
+]

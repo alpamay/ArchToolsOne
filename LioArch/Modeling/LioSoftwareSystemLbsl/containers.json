@@ -1,0 +1,146 @@
+[
+  {
+    "_id": "LioDbLbsl",
+    "CanonicalName": "LioDbLbsl",
+    "Description": "LioDbLbsl storage accessible via local rpc",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "CRUD",
+        "Api": "local rpc cpp ILioMap"
+      }
+    ],
+    "Uses": [
+    ]
+  },
+  { // LioMama
+    "_id": "LioMama",
+    "CanonicalName": "LioMama",
+    "Description": "LioMaMa - Action Manager G1 Process",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "G1 Action Interface",
+        "Api": "cpp LioMessages queues"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDbLbsl",
+        "Name": "CRUD"
+      }
+    ]
+  },
+  // ### LioVip ###
+  {
+    "_id": "LioVip",
+    "CanonicalName": "LioVip",
+    "Description": "Vehicle In Process software. Used CLR access for DOM, CRUD, Schedule",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "Pretty loaded container responsible for handling RecDataTg ReceivedDataWrappedTelegram which is in fact NLSmTTL protocol format wrapped into LioMessage.",
+        "Api": "cpp LioMessages queues"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDbLbsl",
+        "Name": "CRUD"
+      },
+      {
+        "Target": "LioMama",
+        "Name": "LioMessage MSG_MEASSURE format [cpp]"
+      },
+      {
+        "Target": "LioComInterfaceMain",
+        "Name": "LioMessage Orders G1/G2"
+      }
+    ]
+  },
+  
+  { // LioComInterfaceLBSL
+    "_id": "LioComInterfaceLBSL",
+    "CanonicalName": "LioComInterfaceLBSL",
+    "Description": "Facade component in RadioAgency iBUS1. Mostly single instanced - agency usual range 250-255| ComClientId 80 by def",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "RadioAgency Interface",
+        "Api": "cpp LioMessages queues"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDbLbsl",
+        "Name": "CRUD"
+      },
+      {
+        "Target": "LioCTTLsLbsl",
+        "Name": "LioMessaging"
+      }
+
+    ]
+  },
+  { // LioCTTLsLbsl
+    "_id": "LioCTTLsLbsl",
+    "CanonicalName": "LioCTTLsLbsl",
+    "Description": "LioCTTLs Layer",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [],
+    "Uses": [
+      {
+        "Target": "LioDbLbsl",
+        "Name": "CRUD"
+      }
+    ]
+  },
+  { // LioDbLbsl
+    "_id": "LioDbLbsl",
+    "CanonicalName": "LioDbLbsl",
+    "Description": "LioDbLbsl",
+    "Technology": "cpp",
+    "Provides": [],
+    "Uses": []
+  },
+  
+  // TaitVoiceEndpoint
+  {
+    "_id": "TaitVoiceEndpoint",
+    "CanonicalName": "TaitVoiceEndpoint",
+    "Description": "Parity desktop endpoint",
+    "Technology": "cpp-0x10?, borland-c++",
+    "Provides": [
+      {
+        "Name": "Dispatcher voice console UI",
+        "Api": "UI, no-api b2b"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "TaitAPI",
+        "Name": "TAIT voice system interface"
+      },
+      {
+        "Target": "Acoustic-Wp-1",
+        "Name": "Audio HCI"
+      }
+
+    ]
+  },
+   // Acoustic-Wp-1
+  {
+    "_id": "Acoustic-Wp-1",
+    "CanonicalName": "Acoustic-Wp-1",
+    "Description": "OS acoustic driver API",
+    "Technology": "Windows native",
+    "Provides": [
+      {
+        "Name": "Audio mixing API",
+        "Api": "c++ based (?), win internal "
+      }
+    ],
+    "Uses": []
+  }
+]
+

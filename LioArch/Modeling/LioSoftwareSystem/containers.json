@@ -1,0 +1,360 @@
+[
+  {
+    "_id": "LioDB",
+    "CanonicalName": "LioDB",
+    "Description": "LioDB storage accessible via local rpc",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "CRUD",
+        "Api": "local rpc cpp ILioMap"
+      }
+    ],
+    "Uses": [],
+    "Components": [], 
+    "Tag": "DB"
+  },
+  {
+    "_id": "DialogApi",
+    "CanonicalName": "DialogApi",
+    "Description": "G1 Backend REST API",
+    "Technology": ".NET48, ASPNET48, SignalR",
+    "Provides": [
+      {
+        "Name": "G1 operational interface on WebApi proto",
+        "Api": ".NET Spring Remoting NET48"
+      },
+      {
+        "Name": "SignalR endpoint",
+        "Api": ".NET48 SignalR"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "G1AdapterService",
+        "Name": "Passing web calls"
+      }
+    ],
+    "Components": []
+  },
+  {
+    "_id": "G1AdapterService",
+    "CanonicalName": "G1AdapterService",
+    "Description": "WebAPI to G1 operations adapter",
+    "Technology": ".NET48",
+    "Provides": [
+      {
+        "Name": "G1 operational interface",
+        "Api": ".NET Spring Remoting NET48"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD Operations"
+      },
+      {
+        "Target": "DialogApi",
+        "Name": "Notify uplink"
+      },
+      {
+        "Target": "LioMama",
+        "Name": "Action access"
+      }
+    ],
+    "Components": ["ActionAccess", "VoiceService", "ActionExecution"]
+  },
+  { // LioMama
+    "_id": "LioMama",
+    "CanonicalName": "LioMama",
+    "Description": "LioMaMa - Action Manager G1 Process",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "G1 Action Interface",
+        "Api": "cpp LioMessages queues"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD"
+      }
+    ],
+    "Components": []
+  },
+  // ### LioVip ###
+  {
+    "_id": "LioVip",
+    "CanonicalName": "LioVip",
+    "Description": "Vehicle In Process software. Used CLR access for DOM, CRUD, Schedule",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "Pretty loaded container responsible for handling RecDataTg ReceivedDataWrappedTelegram which is in fact NLSmTTL protocol format wrapped into LioMessage.",
+        "Api": "cpp LioMessages queues"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD"
+      },
+      {
+        "Target": "LioMama",
+        "Name": "LioMessage MSG_MEASSURE format [cpp]"
+      },
+      {
+        "Target": "LioComInterfaceMain",
+        "Name": "LioMessage Orders G1/G2"
+      }
+    ],
+    "Components": []
+  },
+  { // LioComInterfaceMain
+    "_id": "LioComInterfaceMain",
+    "CanonicalName": "LioComInterfaceMain",
+    "Description": "Facade component in RadioAgency. Mostly single instanced - agency usual range 250-255| ComClientId 80 by def",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "RadioAgency Interface",
+        "Api": "cpp LioMessages queues"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD"
+      },
+      {
+        "Target": "LioCTTLs",
+        "Name": "LioMessaging, WCF(?)"
+      }
+    ],
+    "Components": []
+  },
+  { // LioCTTL-1
+    "_id": "LioCTTL-1",
+    "CanonicalName": "LioCTTL-1",
+    "Description": "Logical data channel API. Processing LioMessages G1/G2 orders to TTL Messages (NLSmTTL). Instance of Channel 1. ",
+    "Technology": "cpp, clr, .NET48",
+    "Provides": [
+      {
+        "Name": "LogicalDataChannel-1-API",
+        "Api": "cpp LioMessages queues, WCF, LioMsg Heartbeat"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD"
+      },
+      {
+        "Target": "TTL-1",
+        "Name": "Socket connection (byte array) MNET messages protocol #todo: --ref MNET message spec"
+      }
+    ],
+    "Components": []
+  },
+  { // LioCTTLs
+    "_id": "LioCTTLs",
+    "CanonicalName": "LioCTTLs",
+    "Description": "Container for CTTLs processes. Integrated via global shared memory and share-memory data send performance mode",
+    "Technology": "cpp",
+    "Provides": [
+      {
+        "Name": "Passing through the traffic to CTTLs",
+        "Api": "cpp LioMessages queues, WCF, LioMsg Heartbeat"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD"
+      },
+      {
+        "Target": "TTL-1",
+        "Name": "Socket connection (byte array) MNET messages protocol #todo: --ref MNET message spec"
+      }
+    ],
+    "Components": []
+  },
+  { // G2Client-1
+    "_id": "G2Client-1",
+    "CanonicalName": "G2Client-1",
+    "Description": "Dispatcher Workstation's software G2 Client desktop UI",
+    "Technology": "java-1.8",
+    "Provides": [
+      {
+        "Name": "Dispatcher, SystemOperator and SystemAdmin roles user interface",
+        "Api": ""
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "DialogApi",
+        "Name": "up/down operations, REST, ref.Swagger"
+      },
+      {
+        "Target": "ClientProxy",
+        "Name": "ClientProxy, protobuf via ActiveMQ"
+      }
+    ],
+    "Components": []
+  }, // LioSetWeb
+  {
+    "_id": "LioSetWeb",
+    "CanonicalName": "LioSetWeb",
+    "Description": "System Operator Lio configuration application",
+    "Technology": "asp-3.1",
+    "Provides": [
+      {
+        "Name": "System Operator UI",
+        "Api": "Config UI, DataActivation UI, OperatorDashboard "
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioSet-Backend",
+        "Name": "Backend API usage "
+      },
+      {
+        "Target": "DataActivation",
+        "Name": "Data Activation Backend API usage"
+      }
+    ],
+    "Components": []
+  },
+  // LioCheck
+  {
+    "_id": "LioCheck",
+    "CanonicalName": "LioCheck",
+    "Description": "Various backend Lio business logic",
+    "Technology": "c++.clr",
+    "Provides": [
+      {
+        "Name": "Monitoring and Domain logic",
+        "Api": "liodb, liomessaging"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "LioMessaging, CRUD"
+      }
+    ],
+    "Components": []
+  },
+  // LioSet-Backend #### LioSet-Backend ### LioSet-Backend
+  {
+    "_id": "LioSet-Backend",
+    "CanonicalName": "LioSet-Backend",
+    "Description": "Config API, Data activation api",
+    "Technology": "dotnet-3.1, aspnet-3.1",
+    "Provides": [
+      {
+        "Name": "Config API, Data activation api",
+        "Api": "http/REST/SSE"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "LioDB",
+        "Name": "CRUD"
+      }
+    ],
+    "Components": []
+  },
+  {
+    "_id": "ClientProxy",
+    "CanonicalName": "ClientProxy",
+    "Description": "ClientProxy SGI service - provides SOAP interface for G2 Clients. Data replication, remote repository concept",
+    "Technology": "java-1.8",
+    "Provides": [
+      {
+        "Name": "G2 Data modeled API",
+        "Api": "SOAP"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "ActiveMQ",
+        "Name": "Messaging"
+      }
+    ],
+    "Components": []
+  },
+  {
+    "_id": "LioWorkflow",
+    "CanonicalName": "LioWorkflow",
+    "Description": "LioWorkflow backend",
+    "Technology": "java-1.8",
+    "Provides": [
+      {
+        "Name": "LioWorkflow API",
+        "Api": "REST"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "ActiveMQ",
+        "Name": "Messaging"
+      }
+    ],
+    "Components": []
+  },
+  {
+    "_id": "ActiveMQ",
+    "CanonicalName": "ActiveMQ",
+    "Description": "ActiveMQ message broking",
+    "Technology": "java-1.8",
+    "Provides": [
+      {
+        "Name": "G2 Data JMS messsage-based data replication, G2 model",
+        "Api": "http [plain text]"
+      }
+    ],
+    "Uses": [],
+    "Components": [],
+    "Tag": "MQ"
+  },
+  {
+    "_id": "LioIDS",
+    "CanonicalName": "LioIDS",
+    "Description": "LioIDS backend",
+    "Technology": "java-1.8",
+    "Provides": [
+      {
+        "Name": "LioIDS API",
+        "Api": "REST"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "ActiveMQ",
+        "Name": "Messaging"
+      }
+    ]
+  },
+  {
+    "_id": "TTL-1",
+    "CanonicalName": "TTL-1",
+    "Description": "TTL-1 Logical channel",
+    "Technology": "c++/clr (4.8)",
+    "Provides": [
+      {
+        "Name": "TransportLayer TCP based NLSmTTL up/down interface",
+        "Api": "TCP"
+      }
+    ],
+    "Uses": [
+      {
+        "Target": "SQLite",
+        "Name": "Common data share for logical channels"
+      }
+    ],
+    "Components": []
+  }
+]
+

@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "LioArch": {
+      "commandName": "Project",
+      "commandLineArgs": "reload --model LioSystem"
+    },
+    "LioArch-upload": {
+      "commandName": "Project",
+      "commandLineArgs": "upload --workspace 59811 --system LioSystem"
+    },
+    "Step1-uploa": {
+      "commandName": "Project",
+      "commandLineArgs": "uploadStep1 --workspace 59811"
+    }
+  }
+}

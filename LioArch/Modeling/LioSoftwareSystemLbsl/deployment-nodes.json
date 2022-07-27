@@ -1,0 +1,145 @@
+[
+  {
+    "_id": "IIS@G1Server",
+    "DisplayName": "IIS 10 G1Server",
+    "Technology": "cpp, clr, .NET48, dotnet-3.1, http, http-2, gRPC",
+    "RelationString": "",
+    "Nodes": [
+      {
+        "_id": "NET48-AppPools",
+        "Type": "Aggregate"
+      },
+      {
+        "_id": "dotnet-3.1-AppPools",
+        "Type": "Aggregate"
+      }
+    ],
+    "Containers": [
+
+    ]
+  },
+  {
+    "_id": "NET48-AppPools",
+    "DisplayName": "NET48-AppPools",
+    "Technology": ".NET48, ASPNET48, http, http-2, gRPC",
+    "RelationString": "",
+    "Nodes": [
+
+    ],
+    "Containers": [
+      {
+        "CanonicalName": "DialogApi",
+        "LifetimeResp": "IIS Service"
+      }
+    ]
+  },
+  {
+    "_id": "dotnet-3.1-AppPools",
+    "DisplayName": "dotnet-3.1-AppPools",
+    "Technology": "dotnet-3.1, aspnet-3.1, gRPC, http/2, https",
+    "RelationString": "",
+    "Nodes": [
+    ],
+    "Containers": [
+
+    ]
+  },
+  {
+    "_id": "ServiceControllerG1",
+    "DisplayName": "Windows Service Controller",
+    "Technology": "native",
+    "RelationString": "",
+    "Nodes": [
+    ],
+    "Containers": [
+      {
+        "CanonicalName": "LioDB",
+        "LifetimeResp": "ServiceController"
+      }
+    ]
+  },
+  {
+    "_id": "ServiceControllerRadio",
+    "DisplayName": "Windows Service Controller",
+    "Technology": "native",
+    "RelationString": "",
+    "Nodes": [
+    ],
+    "Containers": [
+
+    ]
+  },
+  {
+    "_id": "G1Server",
+    "DisplayName": "Win-x64 G1Server",
+    "Technology": "jre-1.8, dotnet-3.1 runtime, .NET48",
+    "RelationString": "",
+    "Nodes": [
+      {
+        "_id": "IIS@G1Server",
+        "Type": "Aggregate"
+      },
+      {
+        "_id": "ServiceControllerG1",
+        "Type": "Aggregate"
+      }
+    ],
+    "Containers": [
+      {
+        "CanonicalName": "LioMama",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "LioVip",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "LioDB",
+        "LifetimeResp": "Windows Service Controller"
+      },
+      {
+        "CanonicalName": "G1AdapterService",
+        "LifetimeResp": "Process | LioWatchdog"
+      }
+    ]
+  },
+  {
+    "_id": "RadioServer",
+    "DisplayName": "Win-x64 RadioServer",
+    "Technology": "dotnet-3.1 runtime, .NET48",
+    "RelationString": "",
+    "Nodes": [
+      {
+        "_id": "ServiceControllerRadio",
+        "Type": "Aggregate"
+      }
+    ],
+    "Containers": [
+      {
+        "CanonicalName": "LioComInterfaceMain",
+        "LifetimeResp": "Process | LioWatchdog"
+      },
+      {
+        "CanonicalName": "LioCTTLs",
+        "LifetimeResp": "Process | LioWatchdog"
+      }
+    ]
+  },
+  {
+    "_id": "Workstation-1",
+    "DisplayName": "Workstation-1",
+    "Technology": "java-1.8",
+    "RelationString": "",
+    "Nodes": [],
+    "Containers": [
+      {
+        "CanonicalName": "G2Client-1",
+        "LifetimeResp": "Process"
+      },
+      {
+        "CanonicalName": "LSSApp-1",
+        "LifetimeResp": "Process"
+      }
+    ]
+  }
+]

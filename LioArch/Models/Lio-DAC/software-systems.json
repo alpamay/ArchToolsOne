@@ -1,0 +1,147 @@
+[
+  {
+    "_id": "LioG1Server",
+    "Location": "Internal",
+    "DisplayName": "Server-side backend based on G1 domain model. Part of SILIO50 Software System",
+    "Type": "SoftwareSystem",
+    "Technology": "cpp, dotnet-3.1, openjdk-1.8, NET-4.8, aspcore-3.1",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Pl5Provision",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data packages"
+      },
+      {
+        "_id": "Cooperation",
+        "Type": "Uses",
+        "Target": "RadioAgency",
+        "Name": "Operations and notifications"
+      }
+    ]
+  },
+  {
+    "_id": "RadioAgency",
+    "Location": "Internal",
+    "DisplayName": "Server-side backend based on G1 domain model. Part of SILIO50 Software System",
+    "Type": "SoftwareSystem",
+    "Technology": "cpp, NET-4.8",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Pl5Provision",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data packages"
+      }
+    ]
+  },
+  {
+    "_id": "LioG2Server",
+    "Location": "Internal",
+    "DisplayName": "Server-side backend in G2 domain model. Part of SICSCG2 Software System",
+    "Type": "SoftwareSystem",
+    "Technology": "openjdk-1.8, activemq-?.?.? version",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Pl5Provision",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data packages"
+      }
+    ]
+  },
+  {
+    "_id": "LioG2Client",
+    "Location": "Internal",
+    "DisplayName": "Client-side backend in G2 domain model. Part of SICSCG2 Software System",
+    "Type": "SoftwareSystem",
+    "Technology": "openjdk-1.8, activemq-?.?.? version",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Pl5Provision",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data packages"
+      }
+    ]
+  },
+  {
+    "_id": "TTLMain",
+    "Location": "Internal",
+    "DisplayName": "TTL mainstream backend. Part of SILRTTL software package",
+    "Type": "SoftwareSystem",
+    "Technology": "cpp-11x, NET48",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "TTL link",
+        "Type": "Uses",
+        "Target": "RadioAgency",
+        "Name": "Uplink/downlink services"
+      }
+    ]
+  },
+  {
+    "_id": "Parity",
+    "Location": "External",
+    "DisplayName": "Parity software",
+    "Type": "SoftwareSystem",
+    "Technology": "borland-cpp, java(open jdk-1.8 ??)",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Satellite co-op",
+        "Type": "Uses",
+        "Target": "RadioAgency",
+        "Name": "Voice Notifications"
+      }
+    ]
+  },
+  {
+    "_id": "LioData",
+    "Location": "External",
+    "DisplayName": "LioData",
+    "Type": "SoftwareSystem",
+    "Technology": "???",
+    "RelationString": "",
+    "RelatedWith": []
+  },
+  {
+    "_id": "BiSystem",
+    "Location": "External",
+    "DisplayName": "BiSystem",
+    "Type": "SoftwareSystem",
+    "Technology": "java ?",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Lio usage",
+        "Type": "Uses",
+        "Target": "LioG1Server",
+        "Name": "Get data"
+      },
+      {
+        "_id": "RadioAgency usage",
+        "Type": "Uses",
+        "Target": "RadioAgency",
+        "Name": "Get data"
+      },
+      {
+        "_id": "LioData usage",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data"
+      },
+      {
+        "_id": "TTL Radio stats to BI",
+        "Type": "Uses",
+        "Target": "TTLMain",
+        "Name": "Get data"
+      }
+    ]
+  }
+]

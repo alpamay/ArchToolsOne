@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "CommonDispatcher",
+    "CanonicalName": "CommonDispatcher",
+    "Description": "Represents a person working with Lio on security Level 1",
+    "Uses": [
+      {
+        "Target": "LioSystem",
+        "Action": "User stories operations"
+      }
+    ]
+  },
+  {
+    "_id": "SystemOperator",
+    "CanonicalName": "SystemOperator",
+    "Description": "Represent a person working with Lio on security Level 2",
+    "Uses": [
+      {
+        "Target": "LioSystem",
+        "Action": "LioSet.Web operator actions"
+      },
+      {
+        "Target": "LioSetWeb",
+        "Action": "LioSet.Web operator actions"
+      },
+      {
+        "Target": "LioData",
+        "Action": "Data preparation"
+      },
+      {
+        "Target": "BISystem",
+        "Action": "Get reporting"
+      }
+    ]
+  },
+  {
+    "_id": "SystemAdmin",
+    "CanonicalName": "SystemAdmin",
+    "Description": "System administrator security Level 3",
+    "Uses": [
+      {
+        "Target": "LioSystem",
+        "Action": "LioSet.Web admin actions, system config"
+      }
+    ]
+  }
+]

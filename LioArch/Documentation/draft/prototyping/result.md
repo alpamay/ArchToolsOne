@@ -1,0 +1,20 @@
+{panel:title=Summary | Reporting}\
+PR Solving pipeline:\
+Analysis | Fixed by coding | Tested | Provided...\
+{panel}\
+h2. Problem Statement\
+Following shortcuts do not work in Selection dialog (rel.D93 tip):
+
+-   ctrl+f
+-   ctrl+d\
+    h2. Open points - Risks - Guesses
+-   verify that none of global settings or any other application in
+    target system, do not overriding those keyboard shortcuts.\
+    From Slawek:\
+    {noformat}\
+    Dla tych, co po mnie przejmą zadanie z znikniętymi skrótami
+    klawiszowymi (PR 456874) - udało mi się ustalić nastepującą rzecz:\
+    problem powstał między SVNową rewizją 67077 (tutaj działa) a rewizją
+    67839 (tutaj już nie działa.).\
+    Powodzenia!\
+    {noformat}

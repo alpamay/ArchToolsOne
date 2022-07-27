@@ -1,0 +1,155 @@
+10:30:19.441 04.11.2020 [I]10/5 <2001> ServiceSCS [7/14] IsAutomaticMutationRecalculationLimitedToExitStop: False
+10:30:19.442 04.11.2020 [I]10/5 <2001> ServiceSCS [8/14] DetourExitEntryLocationAllowedWithPatternsDirectionChangeBetween: False
+10:30:19.442 04.11.2020 [I]10/5 <2001> ServiceSCS [9/14] IsHistoryBasedPredictionEnabled: False
+10:30:19.442 04.11.2020 [I]10/5 <2001> ServiceSCS [10/14] IsDynamicPathDispatchEnabled: False
+10:30:19.442 04.11.2020 [I]10/5 <2001> ServiceSCS [11/14] IsDynamicPathDispatchWithPredictionsEnabled: False
+10:30:19.448 04.11.2020 [I]10/5 <2001> ServiceSCS [12/14] SpontaneousPathDispatchConnectionPathText: Objazd {0:R} {0:D}, wjazd: {0:S}
+10:30:19.449 04.11.2020 [I]10/5 <2001> ServiceSCS [13/14] SpontaneousPathDispatchConnectionPathTextTitle: 
+10:30:19.449 04.11.2020 [I]10/5 <2001> ServiceSCS [14/14] SpontaneousPathDispatchConnectionPathTextNumber: 1
+10:30:19.486 04.11.2020 [I]10/5 <2001> ServiceSCS RecalculateScheduleModificationsOnPathDispatchActionsChange() => STARTED
+10:30:19.493 04.11.2020 [I]10/5 <2001> ServiceSCS Loaded path dispatch actions => STATISTICS list contains 0 elements
+10:30:19.505 04.11.2020 [I]10/5 <2001> ServiceSCS RecalculateScheduleModificationsOnPathDispatchActionsChange() => FINISHED
+10:30:19.704 04.11.2020 [I]80/5 Initialize PDCG2 => Done
+10:30:19.706 04.11.2020 [I]80/5 Initialize TransitionChangeNotifier
+10:30:19.715 04.11.2020 [I]10/5   Schedule calculation tasks: 0
+10:30:19.757 04.11.2020 [I]80/5 Initialize THS => Start
+10:30:19.936 04.11.2020 [E]90/5 PerformanceCountersHelper System.UnauthorizedAccessException: Cannot create or delete the Performance Category 'lio_lioscs' because access is denied.
+
+   at System.Diagnostics.PerformanceCounterLib.RegisterFiles(String arg0, Boolean unregister)
+
+   at System.Diagnostics.PerformanceCounterLib.UnregisterCategory(String categoryName)
+
+   at System.Diagnostics.PerformanceCounterCategory.Delete(String categoryName)
+
+   at Lio.Infrastructure.PerfCounters.PerformanceCountersHelper.CreateCounters()
+10:30:19.937 04.11.2020 [D] 5/5 TableChangeWatcher`1 Subscription 10 for 5670-VehicleState_T_Type
+10:30:20.254 04.11.2020 [I]10/5 <2007> ServiceTHS [1/1] WithOldMeasurementsSupport: False
+10:30:20.261 04.11.2020 [I]80/5 Initialize THS => Done
+10:30:20.319 04.11.2020 [I]80/5 Initialize Pattern Informaton => Start
+10:30:20.569 04.11.2020 [D] 5/5 PatternInformationtLogger (PtIn) Pattern prediction timerange: 12:00:00 
+10:30:20.582 04.11.2020 [I]80/5 Initialize Pattern Informaton => Done
+10:30:20.588 04.11.2020 [D] 5/5 Participations Dependencies start.
+10:30:20.588 04.11.2020 [D] 5/5 Participations Dependencies for VehicleStandardDataChangeWatcher: (-)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for VehicleCompositionBasedOnVhRecordChangeNotifier: (VehicleStandardDataChangeWatcher)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for VehicleStandardChangeNotifier: (VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for VehiclePositionGeneratorEvents: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehicleBlockChangeNotifier)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for VehicleBlockChangeNotifier: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for StopPointOrientedActualTransitionsSupplier: (ActualTransitionsChangeEventSource,VehicleScheduleHasBeenOutDatedNotifier,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehicleModificationsChangeController,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,SpontaneousPathDispatchChangeNotifier,ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks,NaviPathObjectChangeNotifier,MeasuredEventNotificationGenerator,MeasuredEvents,TripHistoryServiceAccess,VehicleReportedStateChangeNotifier)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for MeasuredEvents: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for ConnectionPassedEvents: (MeasuredEvents,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for MeasuredEventNotificationGenerator: (MeasuredEvents,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,TripHistoryServiceAccess,VehicleReportedStateChangeNotifier)
+10:30:20.593 04.11.2020 [D] 5/5 Participations Dependencies for NotificationTableManager: (VehicleModificationsChangeController,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,SpontaneousPathDispatchChangeNotifier,ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks,NaviPathObjectChangeNotifier,MeasuredEventNotificationGenerator,MeasuredEvents,TripHistoryServiceAccess,VehicleReportedStateChangeNotifier,VehicleReportedStateDataNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for VehicleScheduleHasBeenOutDatedNotifier: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehicleModificationsChangeController,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,SpontaneousPathDispatchChangeNotifier,ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks,NaviPathObjectChangeNotifier,MeasuredEventNotificationGenerator,MeasuredEvents,TripHistoryServiceAccess,VehicleReportedStateChangeNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for VehicleReportedStateDataNotifier: (VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for OnPathDispatchListReload: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for DepotExitLogonController: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActionDataChangeWatcher: (PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActionBusinessChangeNotifier: (ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PredefActionDataChangeWatcher: (PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActionChangedNotifier PlannedPathDispatchAction: (ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PersistentActionNotifier 39: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PlannedPathDispatchChangeNotifier: (ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActionChangedNotifier SpontaneousPathDispatchAction: (ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PersistentActionNotifier 38: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for SpontaneousPathDispatchChangeNotifier: (ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks,NaviPathObjectChangeNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for NaviPathObjectChangeNotifier: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActionChangedNotifier GeneratedBlocks: (ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PersistentActionNotifier 151: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for VehicleValidScheduledPositionChangeNotifier: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for VehiclePostionOnPdCorrectionEventGenerator: (VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for EngineWrapper: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for VehicleModificationsChangeController: (VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,SpontaneousPathDispatchChangeNotifier,ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks,NaviPathObjectChangeNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActualTransitionsChangeEventSource: (VehicleScheduleHasBeenOutDatedNotifier,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehicleModificationsChangeController,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,SpontaneousPathDispatchChangeNotifier,ActionBusinessChangeNotifier,ActionChangedNotifier PlannedPathDispatchAction,ActionDataChangeWatcher,PersistentActionNotifier 39,PersistentActionNotifier 38,PersistentActionNotifier 151,PredefActionDataChangeWatcher,ActionChangedNotifier SpontaneousPathDispatchAction,ActionChangedNotifier GeneratedBlocks,NaviPathObjectChangeNotifier,MeasuredEventNotificationGenerator,MeasuredEvents,TripHistoryServiceAccess,VehicleReportedStateChangeNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for VehicleReportedStateChangeNotifier: (VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for TripHistoryServiceAccess: (MeasuredEvents,VehiclePostionOnPdCorrectionEventGenerator,VehicleStandardChangeNotifier,VehicleCompositionBasedOnVhRecordChangeNotifier,VehicleStandardDataChangeWatcher,VehiclePositionGeneratorEvents,VehicleBlockChangeNotifier,VehicleReportedStateChangeNotifier)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PatternPathDispatchInfoUpdaterService: (PatternInformationService)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for ActualPatternCoverage: (-)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PatternPredictionInfoUpdater: (ActualPatternCoverage,PatternInformatinPredictionScheduler,PatternInformationService)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PatternInformatinPredictionScheduler: (PatternInformationService)
+10:30:20.594 04.11.2020 [D] 5/5 Participations Dependencies for PatternInformationService: (-)
+10:30:20.597 04.11.2020 [D] 5/5 Participations Event flow VehicleStandardDataChangeWatcher:VhRecordChangedEvent -> VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordChangedWithHeadVerificationEvent,VhRecordDeletedWithHeadVerificationEvent,VhNotificationRecordResetEvent,VhCompositionChangedEvent
+10:30:20.597 04.11.2020 [D] 5/5 Participations Event flow VehicleStandardDataChangeWatcher:VhRecordDeletedEvent -> VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordChangedWithHeadVerificationEvent,VhRecordDeletedWithHeadVerificationEvent,VhNotificationRecordResetEvent,VhCompositionChangedEvent
+10:30:20.597 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordChangedWithHeadVerificationEvent -> VehicleStandardChangeNotifier:VhChangedEvent
+10:30:20.597 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordChangedWithHeadVerificationEvent -> VehicleReportedStateDataNotifier:VhReportedStateDataNotifiedEvent
+10:30:20.597 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordChangedWithHeadVerificationEvent -> VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition,OldIbisWronglyPositionedOnPd
+10:30:20.597 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordChangedWithHeadVerificationEvent -> VehicleReportedStateChangeNotifier:VhReportedStateChangedEvent
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordDeletedWithHeadVerificationEvent -> NotificationTableManager:NONE
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhRecordDeletedWithHeadVerificationEvent -> VehicleReportedStateDataNotifier:VhReportedStateDataNotifiedEvent
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleCompositionBasedOnVhRecordChangeNotifier:VhNotificationRecordResetEvent -> NotificationTableManager:NONE
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleStandardChangeNotifier:VhChangedEvent -> VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition,OldIbisWronglyPositionedOnPd
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehiclePositionGeneratorEvents:VhPositionGenerated -> MeasuredEvents:MeasuredStopPointPassageEvent
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehiclePositionGeneratorEvents:VhPositionGenerated -> VehicleModificationsChangeController:PathDispatchChangedForVehicle
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleBlockChangeNotifier:VhBlockChangedEvent -> VehiclePositionGeneratorEvents:VhPositionGenerated
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow MeasuredEvents:MeasuredStopPointPassageEvent -> ConnectionPassedEvents:NONE
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow MeasuredEvents:MeasuredStopPointPassageEvent -> MeasuredEventNotificationGenerator:MeasuredStoredEvent
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow MeasuredEvents:MeasuredStopPointPassageEvent -> TripHistoryServiceAccess:VehicleMeasuredStateChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow MeasuredEventNotificationGenerator:MeasuredStoredEvent -> NotificationTableManager:NONE
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow MeasuredEventNotificationGenerator:MeasuredStoredEvent -> VehicleScheduleHasBeenOutDatedNotifier:VhScheduleHasBeenOutDatedEvent
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleScheduleHasBeenOutDatedNotifier:VhScheduleHasBeenOutDatedEvent -> ActualTransitionsChangeEventSource:ScheduleCalculatedEvent
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow VehicleReportedStateDataNotifier:VhReportedStateDataNotifiedEvent -> NotificationTableManager:NONE
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordChanged -> ActionChangedNotifier PlannedPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordChanged -> ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordChanged -> ActionChangedNotifier GeneratedBlocks:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordCreated -> ActionChangedNotifier PlannedPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordCreated -> ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordCreated -> ActionChangedNotifier GeneratedBlocks:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordDeleted -> ActionChangedNotifier PlannedPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordDeleted -> ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionDataChangeWatcher:ActionRecordDeleted -> ActionChangedNotifier GeneratedBlocks:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionBusinessChangeNotifier:ActionBusinessChanged -> PlannedPathDispatchChangeNotifier:PlannedPathDispatchChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionBusinessChangeNotifier:ActionBusinessChanged -> SpontaneousPathDispatchChangeNotifier:SpontaneousPathDispatchChanged,SpontaneousPathDispatchConnectionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordChanged -> ActionChangedNotifier PlannedPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordChanged -> ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordChanged -> ActionChangedNotifier GeneratedBlocks:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordCreated -> ActionChangedNotifier PlannedPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordCreated -> ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordCreated -> ActionChangedNotifier GeneratedBlocks:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordDeleted -> ActionChangedNotifier PlannedPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordDeleted -> ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PredefActionDataChangeWatcher:ActionRecordDeleted -> ActionChangedNotifier GeneratedBlocks:ActionChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionChangedNotifier PlannedPathDispatchAction:ActionChanged -> ActionBusinessChangeNotifier:ActionBusinessChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PersistentActionNotifier 39:ActionRecordsInitialize -> ActionDataChangeWatcher:ActionRecordChanged,ActionRecordCreated,ActionRecordDeleted
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PersistentActionNotifier 39:ActionRecordsInitialize -> PredefActionDataChangeWatcher:ActionRecordChanged,ActionRecordCreated,ActionRecordDeleted
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow ActionChangedNotifier SpontaneousPathDispatchAction:ActionChanged -> ActionBusinessChangeNotifier:ActionBusinessChanged
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PersistentActionNotifier 38:ActionRecordsInitialize -> ActionDataChangeWatcher:ActionRecordChanged,ActionRecordCreated,ActionRecordDeleted
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow PersistentActionNotifier 38:ActionRecordsInitialize -> PredefActionDataChangeWatcher:ActionRecordChanged,ActionRecordCreated,ActionRecordDeleted
+10:30:20.598 04.11.2020 [D] 5/5 Participations Event flow SpontaneousPathDispatchChangeNotifier:SpontaneousPathDispatchConnectionChanged -> VehicleModificationsChangeController:PathDispatchChangedForVehicle
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow NaviPathObjectChangeNotifier:NaviPathChangedEvent -> SpontaneousPathDispatchChangeNotifier:SpontaneousPathDispatchChanged,SpontaneousPathDispatchConnectionChanged
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow ActionChangedNotifier GeneratedBlocks:ActionChanged -> ActionBusinessChangeNotifier:ActionBusinessChanged
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow PersistentActionNotifier 151:ActionRecordsInitialize -> ActionDataChangeWatcher:ActionRecordChanged,ActionRecordCreated,ActionRecordDeleted
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow PersistentActionNotifier 151:ActionRecordsInitialize -> PredefActionDataChangeWatcher:ActionRecordChanged,ActionRecordCreated,ActionRecordDeleted
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> VehiclePositionGeneratorEvents:VhPositionGenerated
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> VehicleBlockChangeNotifier:VhBlockChangedEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> MeasuredEvents:MeasuredStopPointPassageEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> NotificationTableManager:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> VehicleScheduleHasBeenOutDatedNotifier:VhScheduleHasBeenOutDatedEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> VehicleValidScheduledPositionChangeNotifier:VhValidScheduledPositionLogonEvent,VhValidScheduledPositionLogoffEvent,VhValidScheduledPositionBlockChangedEvent,VhValidScheduledPositionTripChangedEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> VehicleModificationsChangeController:PathDispatchChangedForVehicle
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:VhVerifiedPosition -> VehicleReportedStateChangeNotifier:VhReportedStateChangedEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehiclePostionOnPdCorrectionEventGenerator:OldIbisWronglyPositionedOnPd -> EngineWrapper:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehicleModificationsChangeController:PathDispatchChangedForVehicle -> NotificationTableManager:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehicleModificationsChangeController:PathDispatchChangedForVehicle -> VehicleScheduleHasBeenOutDatedNotifier:VhScheduleHasBeenOutDatedEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow ActualTransitionsChangeEventSource:ScheduleCalculatedEvent -> StopPointOrientedActualTransitionsSupplier:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow VehicleReportedStateChangeNotifier:VhReportedStateChangedEvent -> TripHistoryServiceAccess:VehicleMeasuredStateChanged
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow TripHistoryServiceAccess:VehicleMeasuredStateChanged -> MeasuredEventNotificationGenerator:MeasuredStoredEvent
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow ActualPatternCoverage:EventPatternByVehicleOccupiedChanged -> PatternPredictionInfoUpdater:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow PatternInformatinPredictionScheduler:EventPatternByVehicleOccupiedChanged -> PatternPredictionInfoUpdater:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow PatternInformationService:EventStaticPatternInfoCalculated -> PatternPathDispatchInfoUpdaterService:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow PatternInformationService:EventStaticPatternInfoCalculated -> PatternPredictionInfoUpdater:NONE
+10:30:20.599 04.11.2020 [D] 5/5 Participations Event flow PatternInformationService:EventStaticPatternInfoCalculated -> PatternInformatinPredictionScheduler:EventPatternByVehicleOccupiedChanged
+10:30:20.609 04.11.2020 [D] 5/5 EventSourceEngine Begin transactionId:[e7cae85db21b7ed9], Util.Interfaces.EventsSourcing.EventApplicationStartup
+10:30:20.612 04.11.2020 [E]90/5 <2001> ServiceSCS <OnOccured>b__13_0() => STARTED
+10:30:20.613 04.11.2020 [I]10/5 <2001> ServiceSCS <InitMonitorsOnStartUp>b__8_0 => BEGIN
+10:30:20.618 04.11.2020 [I]10/5 <2001> ServiceSCS <InitMonitorsOnStartUp>b__8_1 => FINISHED
+10:30:20.620 04.11.2020 [D] 5/5 EventSourceEngine End in 18ms transactionId:[e7cae85db21b7ed9] noEvents:4
+10:30:20.621 04.11.2020 [I]10/5 Initial transitions update => Start
+10:30:20.621 04.11.2020 [D] 5/5 PatternInformationService Static pattern info calculation start.
+10:30:20.635 04.11.2020 [D] 5/5 <2001> ServiceSCS GetAllVehiclesSchedules() TimeRange:(04.11.2020 09:28:20 - 04.11.2020 10:00:20), WithStopPoints:False, WithCompleteTrips:False, SuppliedRegularAndGeneratedRelative, StandardAdaptation, AllVehiclesSchedules, LoggedOnVehicles: 0 => STARTED
+10:30:20.652 04.11.2020 [I]10/5 Initial transitions update => Done
+10:30:20.652 04.11.2020 [I]10/5 lioSCS VLOD initialization successful - starting message loop
+10:30:22.501 04.11.2020 [W]85/5 <2003> DomProviders No DriveTimeTypeValid_S_Type for DayTypeGroupIdx: 0, TimeTypeRelationId(OpDayIdx:43401 RteDir(RteIdx:1 B))
+10:30:22.501 04.11.2020 [E]90/5 <2003> DomProviders No drive time type relation for TimeTypeRelationId(OpDayIdx:43401 RteDir(RteIdx:1 B))
+10:30:22.504 04.11.2020 [I]10/5 ServiceGBS DrivingTimeTypeValidResolver() Resolving time for GeneratedBlockPatternSectionDefinition() PatternId:PatternId(PatIdx:2539 RteIdx:1 Supplied) BeginPatternSegmentId:PsIdx:17998 Supplied EndPatternSegmentId:PsIdx:16925 Supplied, GeneratedBlocksTimePointDefinition() ForOperationalDay:OpDayIdx:43772 Time:04.11.2020 09:30:22 using TimeValid table strategy has failed => CONTINUE
+10:30:22.534 04.11.2020 [I]10/5 ServiceGBS ResolveDriveTimeTypeValidId() Resolving time for GeneratedBlockPatternSectionDefinition() PatternId:PatternId(PatIdx:2539 RteIdx:1 Supplied) BeginPatternSegmentId:PsIdx:17998 Supplied EndPatternSegmentId:PsIdx:16925 Supplied, GeneratedBlocksTimePointDefinition() ForOperationalDay:OpDayIdx:43772 Time:04.11.2020 09:30:22 using supplied block strategy has succeed Trip(TripId(BlkIdx:23132, , Supplied Seq:1) RteIdx:1 Pattern() Id:PatternId(PatIdx:2539 RteIdx:1 Supplied) Dir:B PatternType:DepotExit FirstPatternSegmentId:PsIdx:17998 Supplied LastPatternSegmentId:PsIdx:16925 Supplied StartTime:23:46:00 Duration:00:23:00 LayoverTime:00:00:00 EndTimeWithoutLayover:1.00:09:00 EndTime:1.00:09:00 StopTimeTypeIdx:1 DriveTimeTypeIdx:11 RunNr:0 TripIdx:622880 DepotExit PrevTripEndTime:00:00:00 NextTripStartTime:1.00:09:00) => CONTINUE
+10:30:22.538 04.11.2020 [W]85/5 <2003> DomProviders No StopTimeTypeValid_S_Type for DayTypeGroupIdx: 0, TimeTypeRelationId(OpDayIdx:43401 RteDir(RteIdx:1 B))
+10:30:22.539 04.11.2020 [E]90/5 <2003> DomProviders No stop time type relation for TimeTypeRelationId(OpDayIdx:43401 RteDir(RteIdx:1 B))

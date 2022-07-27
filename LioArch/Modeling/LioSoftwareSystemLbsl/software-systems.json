@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "LioSystem",
+    "Location": "External",
+    "DisplayName": "LIO50 iBus1 Software System",
+    "Type": "SoftwareSystem",
+    "Technology": "cpp, dotnet-3.1, openjdk-1.8, aspcore-3.1",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Pl5Provision",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data packages"
+      }
+    ]
+  },
+  {
+    "_id": "LioData",
+    "Location": "External",
+    "DisplayName": "LioData pl5 provision",
+    "Type": "SoftwareSystem",
+    "Technology": "???",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "self",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "self"
+      }
+    ]
+  },
+  {
+    "_id": "LioSystemLbsl",
+    "Location": "Internal",
+    "DisplayName": "LioSystemLbsl",
+    "Type": "SoftwareSystem",
+    "Technology": "cpp, NET-4.8",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "Pl5Provision",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "Get data packages"
+      }
+    ]
+  },
+  {
+    "_id": "BiSystemLbsl",
+    "Location": "External",
+    "DisplayName": "BI System",
+    "Type": "SoftwareSystem",
+    "Technology": "java-1.8, ???",
+    "RelationString": "",
+    "RelatedWith": [
+      {
+        "_id": "self",
+        "Type": "Uses",
+        "Target": "LioData",
+        "Name": "self"
+      }
+    ]
+  }
+]
